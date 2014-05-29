@@ -8,8 +8,8 @@ public abstract class IcecreamDecorator implements Icecream{
 		this.icecream = icecream;
 	}
 		
-	@Override
-	public void makeIcecream(){
-		icecream.makeIcecream();
-	}
+//	@Override
+//	public void makeIcecream(){
+//		icecream.makeIcecream();
+//	}
 }
