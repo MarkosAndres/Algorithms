@@ -6,6 +6,8 @@ public abstract class ExtrasDecorator extends Beverage{
 	
 	private Beverage beverage;
 	
+	public abstract String getDescription();
+	
 	public ExtrasDecorator(Beverage beverage){
 		this.setBeverage(beverage);
 	}
