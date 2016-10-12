@@ -11,4 +11,11 @@ public class Soy extends ExtrasDecorator{
 	public float cost(){
 		return 0.2f + getBeverage().cost();
 	}
+
+	@Override
+	public String getDescription()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

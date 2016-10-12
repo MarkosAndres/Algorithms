@@ -11,4 +11,11 @@ public class Whip extends ExtrasDecorator{
 	public float cost(){
 		return 0.1f + getBeverage().cost();
 	}
+
+	@Override
+	public String getDescription()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

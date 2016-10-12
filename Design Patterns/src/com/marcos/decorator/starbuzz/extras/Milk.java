@@ -11,4 +11,10 @@ public class Milk extends ExtrasDecorator{
 	public float cost(){
 		return 0.6f + getBeverage().cost();
 	}
+
+	@Override
+	public String getDescription()
+	{
+		return null;
+	}
 }

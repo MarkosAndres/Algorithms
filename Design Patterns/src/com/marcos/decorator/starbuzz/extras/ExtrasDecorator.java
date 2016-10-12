@@ -4,13 +4,13 @@ import com.marcos.decorator.starbuzz.beverages.Beverage;
 
 public abstract class ExtrasDecorator extends Beverage{
 	
-	private Beverage beverage;
-	
-	public abstract String getDescription();
+	private Beverage beverage;	
 	
 	public ExtrasDecorator(Beverage beverage){
 		this.setBeverage(beverage);
 	}
+	
+	public abstract String getDescription();
 
 	public Beverage getBeverage() {
 		return beverage;
