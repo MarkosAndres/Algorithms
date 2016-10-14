@@ -13,7 +13,10 @@ public class BinarySearch {
 		
 		BinarySearch bs = new BinarySearch();
 		
-		bs.binarySearch(bs.list.get(new Random().nextInt(bs.list.size()-1)), 0, bs.list.size()-1, bs.list);
+		int key = bs.list.get(new Random().nextInt(bs.list.size()-1));
+		int start = 0;
+		int end = bs.list.size()-1;
+		bs.binarySearch(key, start, end, bs.list);
 	}	
 	
 	public void binarySearch(int key, int start, int end, List array){

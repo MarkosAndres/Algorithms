@@ -14,8 +14,10 @@ public class Fibonacci {
 	static int fr(int n){
 		if(n < 2)
 			return n;
-		else
-			return fr(n-1)+fr(n-2);
+		else{
+			int i = fr(n-1)+fr(n-2); 
+			return i;
+		}			
 	}
 	
 	//ITERATION
