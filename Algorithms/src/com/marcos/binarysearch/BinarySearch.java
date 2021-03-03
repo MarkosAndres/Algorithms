@@ -6,61 +6,40 @@ import java.util.List;
 import java.util.Random;
 
 public class BinarySearch {
-	
-	private ArrayList<Integer> list;
-	
 	public static void main(String[] args) {
-		
-		BinarySearch bs = new BinarySearch();
-		
-		int key = bs.list.get(new Random().nextInt(bs.list.size()-1));
-		int start = 0;
-		int end = bs.list.size()-1;
-		bs.binarySearch(key, start, end, bs.list);
-	}	
-	
-	public void binarySearch(int key, int start, int end, List array){
-		System.out.println("key: "+key);
-		System.out.println("start: "+start);
-		System.out.println("end: "+end+"\n");
-		
-		int position;
-		int comparisonCount = 0;
-		
-		position = (start + end) / 2;
-		
-		while(list.get(position) != key && start <= end){
-			++comparisonCount;
-			
-			if(list.get(position) > key){
-				end = position - 1;
-			}else{
-				start = position + 1;
-			}
-			
-			position = (start + end) / 2;
-		}
-		
-		if(start <= end){
-			System.out.println("The number was found in array index: " + position);
-			System.out.println("The binary search found the number after " + comparisonCount + " comparisons.");
-		} else
-	          System.out.println("Sorry, the number is not in this array.  The binary search made "+comparisonCount  + " comparisons.");
-	  
-		System.out.println();
-		for(int i : list)
-			System.out.print(i + " ,");
+		int index = doBinarySearch(1024);
+		System.out.println("Value is at index: " + index);
 	}
-	
-	//CONSTRUCTOR
-	public BinarySearch(){
-		this.list = new ArrayList<Integer>();
-		Random randomNumber = new Random();
-		
-		for(int i = 0; i <= 12; ++i){
-			list.add(randomNumber.nextInt(100));
+
+	public static int doBinarySearch(int value) {
+		Integer[] numbers = new Integer[]{1,9,23,24,38,41,45,49,50,51,66,963,1024,2222,3564,8888};
+
+		int low = 0;
+		int high = numbers.length - 1;
+		int mid = 0;
+		int guess = 0;
+
+		int iterations = 0;
+		int index = -1;
+
+		while(low <= high) {
+			iterations++;
+			mid = (high + low) / 2;
+			guess = numbers[mid];
+
+			if(guess == value) {
+				index = mid;
+				break;
+			}
+			else if(guess < value) {
+				low = mid + 1;
+			}
+			else {
+				high = mid - 1;
+			}
 		}
-		
-		Collections.sort(list);
+
+		System.out.println("Number of iterations: "+iterations);
+		return index;
 	}
 }
